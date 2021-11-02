@@ -1,8 +1,10 @@
 package com.example.intentpractice;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.provider.AlarmClock;
+import android.provider.MediaStore;
 import android.view.View;
 
 import androidx.annotation.RequiresApi;
@@ -23,8 +25,10 @@ public class ClickListeners implements View.OnClickListener {
             Intent intent = new Intent(activity, AlarmActivity.class);
             activity.startActivity(intent);
         } else if (v.getId() == R.id.btnPicture) {
-            Intent intent = new Intent(activity, AlarmActivity.class);
-            activity.startActivity(intent);
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (intent.resolveActivity(activity.getPackageManager()) != null) {
+                activity.startActivity(intent);
+            }
         } else if (v.getId() == R.id.btnCall) {
             Intent intent = new Intent(activity, AlarmActivity.class);
             activity.startActivity(intent);
