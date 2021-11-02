@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -17,42 +17,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnPicture"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Take a picture"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/btnAlarm"
+        app:layout_constraintStart_toStartOf="@+id/btnAlarm"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlarm" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnCall"
         android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Make a call"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/btnPicture"
+        app:layout_constraintStart_toStartOf="@+id/btnPicture"
+        app:layout_constraintTop_toBottomOf="@+id/btnPicture" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnMessage"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Make a message"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintEnd_toEndOf="@+id/btnCall"
+        app:layout_constraintStart_toStartOf="@+id/btnCall"
+        app:layout_constraintTop_toBottomOf="@+id/btnCall" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnRepo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Open Git Repo"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintEnd_toEndOf="@+id/btnMessage"
+        app:layout_constraintStart_toStartOf="@+id/btnMessage"
+        app:layout_constraintTop_toBottomOf="@+id/btnMessage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

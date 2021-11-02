@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.intentpractice">
 
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentPractice">
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="false">
+        <intent-filter>
+            <action android:name="android.intent.action.SET_ALARM" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
