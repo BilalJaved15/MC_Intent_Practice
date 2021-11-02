@@ -30,20 +30,37 @@ public class ClickListeners implements View.OnClickListener {
                 activity.startActivity(intent);
             }
         } else if (v.getId() == R.id.btnCall) {
-            Intent intent = new Intent(activity, AlarmActivity.class);
+            Intent intent = new Intent(activity, CallActivity.class);
             activity.startActivity(intent);
         } else if (v.getId() == R.id.btnMessage) {
-            Intent intent = new Intent(activity, AlarmActivity.class);
+            Intent intent = new Intent(activity, MessageActivity.class);
             activity.startActivity(intent);
         } else if (v.getId() == R.id.btnRepo) {
-            Intent intent = new Intent(activity, AlarmActivity.class);
-            activity.startActivity(intent);
+            Uri webpage = Uri.parse("https://github.com/BilalJaved15/MC_Intent_Practice");
+            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            if (intent.resolveActivity(activity.getPackageManager()) != null) {
+                activity.startActivity(intent);
+            }
         } else if(v.getId() == R.id.btnAddAlarm){
             int hours = ((AlarmActivity)activity).timePicker.getHour();
             int minutes = ((AlarmActivity)activity).timePicker.getMinute();
             Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
                     .putExtra(AlarmClock.EXTRA_HOUR, hours)
                     .putExtra(AlarmClock.EXTRA_MINUTES, minutes);
+            if (intent.resolveActivity(activity.getPackageManager()) != null) {
+                activity.startActivity(intent);
+            }
+        } else if (v.getId() == R.id.btnCallNumber){
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + ((CallActivity)activity).number.getText().toString()));
+            if (intent.resolveActivity(activity.getPackageManager()) != null) {
+                activity.startActivity(intent);
+            }
+        } else if(v.getId() == R.id.btnSendMessage){
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            //intent.setType(HTTP.PLAIN_TEXT_TYPE);
+            intent.setType("text/plain");
+            intent.putExtra("sms_body", ((MessageActivity)activity).message.getText().toString());
             if (intent.resolveActivity(activity.getPackageManager()) != null) {
                 activity.startActivity(intent);
             }
